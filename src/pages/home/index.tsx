@@ -220,7 +220,7 @@ const Home = () => {
                                                             validationError.push('fullname');
                                                         }
                                                     } else {
-                                                        if(index != -1) {
+                                                        if(index !== -1) {
                                                             validationError.splice(index, 1);
                                                         }
                                                     }
@@ -241,25 +241,25 @@ const Home = () => {
                                                 id='email' 
                                                 name='email'
                                                 onChange={(e) => {
-                                                    const index = validationError.findIndex(x => x == 'email');
+                                                    const index = validationError.findIndex(x => x === 'email');
                                                     if(!e.target.value) {
-                                                        if(index == -1) {
+                                                        if(index === -1) {
                                                             validationError.push('email');
                                                         } 
                                                     } else {
-                                                        if(index != -1) {
+                                                        if(index !== -1) {
                                                             validationError.splice(index, 1);
                                                         }
                                                     }
 
-                                                    const formatIndex = validationError.findIndex(x => x == 'email-format');
+                                                    const formatIndex = validationError.findIndex(x => x === 'email-format');
                                                     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
                                                     if(!emailRegex.test(e.target.value)) {
-                                                        if(formatIndex == -1) {
+                                                        if(formatIndex === -1) {
                                                             validationError.push('email-format');
                                                         } 
                                                     } else {
-                                                        if(formatIndex != -1) {
+                                                        if(formatIndex !== -1) {
                                                             validationError.splice(formatIndex, 1);
                                                         }
                                                     }
