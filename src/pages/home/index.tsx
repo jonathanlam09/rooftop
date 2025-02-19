@@ -297,7 +297,29 @@ const Home = () => {
                                                     validationError.includes('contact-format')) ? '1px solid red' : ''
                                                  }}
                                                 onChange={(e) => {
+                                                    const index = validationError.findIndex(x => x === 'contact');
+                                                    if(!e.target.value) {
+                                                        if(index === -1) {
+                                                            validationError.push('contact');
+                                                        } 
+                                                    } else {
+                                                        if(index !== -1) {
+                                                            validationError.splice(index, 1);
+                                                        }
+                                                    }
 
+                                                    const formatIndex = validationError.findIndex(x => x === 'contact-format');
+                                                    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                                                    if(!emailRegex.test(e.target.value)) {
+                                                        if(formatIndex === -1) {
+                                                            validationError.push('contact-format');
+                                                        } 
+                                                    } else {
+                                                        if(formatIndex !== -1) {
+                                                            validationError.splice(formatIndex, 1);
+                                                        }
+                                                    }
+                                                    setValidationError([...validationError]);
                                                 }}/>
                                                 {
                                                     validationError.includes('contact') ? (
