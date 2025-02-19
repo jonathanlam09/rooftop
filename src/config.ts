@@ -3,7 +3,7 @@ import * as helper from './helper';
 
 const apiHeader = { 'Content-Type': 'multipart/form-data' };
 
-axios.defaults.baseURL = 'https://rooftop-energy-api.netlify.app/api';
+axios.defaults.baseURL = 'https://rooftop-energy-api.netlify.app/.netlify/functions';
 axios.defaults.withCredentials = true;
 axios.defaults.headers.common['Content-Type'] = apiHeader['Content-Type'];
 
