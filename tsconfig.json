@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "lib": ["dom", "dom.iterable", "es2017"],
+        "allowJs": true,
+        "checkJs": false,
+        "jsx": "react-jsx",
+        "moduleResolution": "node",
+        "module": "esnext",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "typeRoots": ["./node_modules/@types", "./types"]
+    },
+    "include": [
+        "src",
+        "global.d.ts"
+    ]
+}
