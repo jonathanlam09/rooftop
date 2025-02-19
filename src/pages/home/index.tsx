@@ -31,7 +31,7 @@ const Home = () => {
             setSchedules(null);
             setCalculating(true);
             const response = await axios.post(`/calculate`, {
-                data: bill
+                bill: bill
             });
             if(!response.data.status) {
                 throw new Error(response.data.error)
