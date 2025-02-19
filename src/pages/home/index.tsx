@@ -30,9 +30,9 @@ const Home = () => {
             setTotalSystemCost(null);
             setSchedules(null);
             setCalculating(true);
-            var formdata = new FormData();
-            formdata.append('bill', String(bill))
-            const response =  await axios.post(`/calculate`, formdata);
+            const response = await axios.post(`/calculate`, {
+                data: bill
+            });
             if(!response.data.status) {
                 throw new Error(response.data.error)
             }
@@ -65,7 +65,13 @@ const Home = () => {
                 return 
             }
             const formdata = new FormData(form.current)
-            const response = await axios.post(`/contactUs`, formdata);
+            const formObject : any = {};
+            formdata.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            const jsonString = JSON.stringify(formObject);
+            const response = await axios.post(`/contactUs`, jsonString);
             if(response.data.validationError) {
                 setValidationError(response.data.validationError);
             }
