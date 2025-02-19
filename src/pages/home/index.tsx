@@ -32,7 +32,7 @@ const Home = () => {
             setCalculating(true);
             var formdata = new FormData();
             formdata.append('bill', String(bill))
-            const response =  await axios.post(`solar/calculate`, formdata);
+            const response =  await axios.post(`/calculate`, formdata);
             if(!response.data.status) {
                 throw new Error(response.data.error)
             }
@@ -65,7 +65,7 @@ const Home = () => {
                 return 
             }
             const formdata = new FormData(form.current)
-            const response = await axios.post(`/contact`, formdata);
+            const response = await axios.post(`/contactUs`, formdata);
             if(response.data.validationError) {
                 setValidationError(response.data.validationError);
             }
