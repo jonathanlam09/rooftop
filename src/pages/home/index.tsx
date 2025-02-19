@@ -69,7 +69,7 @@ const Home = () => {
             formdata.forEach((value, key) => {
                 formObject[key] = value;
             });
-            const jsonString = JSON.stringify(formObject);
+            // const jsonString = JSON.stringify(formObject);
             const response = await axios.post(`/contactUs`, formObject);
             if(response.data.validationError) {
                 setValidationError(response.data.validationError);
