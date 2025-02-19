@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as helper from './helper';
 
-const apiHeader = { 'Content-Type': 'multipart/form-data' };
+const apiHeader = { 'Content-Type': 'application/json' };
 
 axios.defaults.baseURL = 'https://rooftop-energy-api.netlify.app/.netlify/functions';
 axios.defaults.withCredentials = true;
